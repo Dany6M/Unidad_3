@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.3.final using JasperReports Library version 6.4.3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ShipReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c4492eba-5e00-4994-ba0b-e78a1bbd7486">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ConnectionTestdb"/>
+	<parameter name="logo_ancla" class="java.lang.String"/>
+	<parameter name="logo_boat" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT boats.id,
+	boats.name,
+	boats.origin,
+	boats.route
+FROM boats]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+	</field>
+	<field name="name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="name"/>
+	</field>
+	<field name="origin" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="origin"/>
+	</field>
+	<field name="route" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="route"/>
+	</field>
+	<group name="id">
+		<groupExpression><![CDATA[$F{id}]]></groupExpression>
+	</group>
+	<group name="name">
+		<groupExpression><![CDATA[$F{name}]]></groupExpression>
+	</group>
+	<group name="origin">
+		<groupExpression><![CDATA[$F{origin}]]></groupExpression>
+	</group>
+	<group name="route">
+		<groupExpression><![CDATA[$F{route}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="87" splitType="Stretch">
+			<staticText>
+				<reportElement x="192" y="24" width="170" height="30" forecolor="#2C5DAB" uuid="3c17340f-60ae-4b56-aff0-e5e9dc524922"/>
+				<textElement textAlignment="Center">
+					<font fontName="AR JULIAN" size="26"/>
+				</textElement>
+				<text><![CDATA[Boat Report]]></text>
+			</staticText>
+			<image>
+				<reportElement x="440" y="16" width="50" height="50" uuid="d03181c0-90e4-4321-9ae0-8a0095f6aae5"/>
+				<imageExpression><![CDATA[$P{logo_ancla}]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="20" y="14" width="50" height="50" uuid="51136b5e-f6f0-44ed-a36a-516621549f1a"/>
+				<imageExpression><![CDATA[$P{logo_boat}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="61" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="141" height="61" forecolor="#FFFCFC" backcolor="#525D80" uuid="5adae95a-c50e-4c5b-bbff-55c4da7552e8"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID Boat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="141" y="0" width="138" height="61" forecolor="#FFFCFC" backcolor="#525D80" uuid="314b0bda-0e4f-42fe-af6d-ec37c0a49170"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ship Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="279" y="0" width="138" height="61" forecolor="#FFFCFC" backcolor="#525D80" uuid="a0afeb56-ae74-45ef-aac3-e8ff76691d2e"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Origin]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="417" y="0" width="138" height="61" forecolor="#FFFCFC" backcolor="#525D80" uuid="4dbf7945-2162-485c-a4d2-da9b806b4238"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Route]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+			<textField>
+				<reportElement x="0" y="0" width="141" height="125" uuid="96f88a1e-79b6-489e-99d3-40e87fad794d"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="141" y="0" width="138" height="125" uuid="fa6569e0-bce9-47cc-9014-c416008175b9"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="279" y="0" width="138" height="125" uuid="02ba0fd4-d127-4be9-be47-e16d8ac7b4b6"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{origin}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="417" y="0" width="138" height="125" uuid="133a1b46-bb46-4636-bd3e-bb41c940aadb"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{route}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="59" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="59" backcolor="#434447" uuid="2dfc7b3c-efb6-48ed-8d67-021b22df8871"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>
