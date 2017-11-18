@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.3.final using JasperReports Library version 6.4.3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CreatorReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7d0f0922-ae0f-4dcb-a425-458f2743eecc">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ConnectionTestdb"/>
+	<parameter name="logo_utng" class="java.lang.String"/>
+	<parameter name="logo_iso" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT creators.id,
+	creators.name,
+	creators.last_name,
+	creators.filiation,
+	creators.area
+FROM creators]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+	</field>
+	<field name="name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="name"/>
+	</field>
+	<field name="last_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="last_name"/>
+	</field>
+	<field name="filiation" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="filiation"/>
+	</field>
+	<field name="area" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="area"/>
+	</field>
+	<group name="id">
+		<groupExpression><![CDATA[$F{id}]]></groupExpression>
+	</group>
+	<group name="name">
+		<groupExpression><![CDATA[$F{name}]]></groupExpression>
+	</group>
+	<group name="last_name">
+		<groupExpression><![CDATA[$F{last_name}]]></groupExpression>
+	</group>
+	<group name="filiation">
+		<groupExpression><![CDATA[$F{filiation}]]></groupExpression>
+	</group>
+	<group name="area">
+		<groupExpression><![CDATA[$F{area}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="86" splitType="Stretch">
+			<staticText>
+				<reportElement x="180" y="24" width="200" height="30" forecolor="#614343" uuid="bfaa2999-03e2-47f3-8331-6869ec9f724c"/>
+				<textElement textAlignment="Center">
+					<font fontName="Algerian" size="20"/>
+				</textElement>
+				<text><![CDATA[Creator Report]]></text>
+			</staticText>
+			<image>
+				<reportElement x="20" y="16" width="50" height="50" uuid="ea36beef-87ca-4612-9795-e00be9a8aef0"/>
+				<imageExpression><![CDATA[$P{logo_utng}]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="494" y="18" width="50" height="50" uuid="c166b48f-7ef3-4b1d-b46c-57a2c60b8e3c"/>
+				<imageExpression><![CDATA[$P{logo_iso}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="49" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="111" height="49" forecolor="#FCF7F7" backcolor="#D16260" uuid="91fb8b64-4e2b-4c10-9ed8-90b8d82f984f"/>
+				<textElement textAlignment="Center">
+					<font fontName="Baskerville Old Face" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID Creator]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="111" y="0" width="111" height="49" forecolor="#FCF7F7" backcolor="#D16260" uuid="024e189a-44a4-4603-b4e6-58a3ba825fb2"/>
+				<textElement textAlignment="Center">
+					<font fontName="Baskerville Old Face" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Creator Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="222" y="0" width="111" height="49" forecolor="#FCF7F7" backcolor="#D16260" uuid="e0b26329-71b3-4941-95f3-6bf242212137"/>
+				<textElement textAlignment="Center">
+					<font fontName="Baskerville Old Face" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Last Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="333" y="0" width="111" height="49" forecolor="#FCF7F7" backcolor="#D16260" uuid="7b628ab2-2cd0-47df-b3c8-5553da132bd2"/>
+				<textElement textAlignment="Center">
+					<font fontName="Baskerville Old Face" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Filiation]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="444" y="0" width="111" height="49" forecolor="#FCF7F7" backcolor="#D16260" uuid="f5502735-2565-4bd9-b08a-930ac8ba4f2b"/>
+				<textElement textAlignment="Center">
+					<font fontName="Baskerville Old Face" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Area]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
+			<textField>
+				<reportElement x="0" y="0" width="111" height="125" uuid="7b5a9416-5b9d-4afb-a019-c6b203bf2a41"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="111" y="0" width="111" height="125" uuid="c66b5e55-c456-4184-a279-f80790d76fbc"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="222" y="0" width="111" height="125" uuid="5b8dbee0-f17d-46d6-a1f0-99791388cadf"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{last_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="333" y="0" width="111" height="125" uuid="2d76094a-10d7-4818-9c7f-c8f0956f5ccf"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{filiation}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="444" y="0" width="110" height="125" uuid="58156f6d-3e56-432d-bd2a-9a5217164aaa"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{area}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
